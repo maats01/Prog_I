@@ -22,3 +22,6 @@ float myFloat = 10f;
 double myDouble = 5d;
 decimal myDecimal = 7m;
 int myInteger = 0;
+
+// Convertendo input de usuário para Double
+double myDouble2 = Convert.ToDouble(Console.ReadLine());
