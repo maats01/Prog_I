@@ -10,68 +10,39 @@ Console.WriteLine("Digite um operador (+, -, * ou /): ");
 
 string operador = Console.ReadLine();
 
-void Tabuada(string operador)
+float result(string op, float a, float b)
 {
-    switch(operador)
+    switch(op)
     {
-        case "*":
-            for (int i = 1; i < 10; i++)
-            {
-                for(int j = 1; j < 10; j++)
-                {
-                    if (j*i < 10)
-                        Console.Write($"{j} x {i} = {i*j}  | ");
-                    else
-                        Console.Write($"{j} x {i} = {i*j} | ");
-                }
-
-                Console.WriteLine("");
-            }
-            break;
-        
         case "+":
-            for (int i = 1; i < 10; i++)
-            {
-                for(int j = 1; j < 10; j++)
-                {
-                    if (j+i < 10)
-                        Console.Write($"{j} + {i} = {i+j}  | ");
-                    else
-                        Console.Write($"{j} + {i} = {i+j} | ");
-                }
-
-                Console.WriteLine("");
-            }
-            break;
-
+            return a + b;
         case "-":
-            for (int i = 1; i < 10; i++)
-            {
-                for(int j = 1; j < 10; j++)
-                {
-                    if (j-i < 10)
-                        Console.Write($"{j} - {i} = {i-j}  | ");
-                    else
-                        Console.Write($"{j} - {i} = {i-j} | ");
-                }
-
-                Console.WriteLine("");
-            }
-            break;
-
+            return a - b;
+        case "*":
+            return a * b;
         case "/":
-            for (int i = 1; i < 10; i++)
-            {
-                for(int j = 1; j < 10; j++)
-                {
-                    double result = Convert.ToDouble(j)/Convert.ToDouble(i);
-                    Console.Write($"{j} / {i} = {result.ToString("N2")} | ");
-                }
-
-                Console.WriteLine("");
-            }
-            break;
+            return a / b;
+        default:
+            Console.WriteLine("bruh");
+            return 0;
     }
 }
 
-Tabuada(operador);
+void operation(string op)
+{
+    for (float i = 1; i < 10; i++)
+    {
+        for(float j = 1; j < 10; j++)
+        {
+            if (result(op, j, i) < 10 & result(op, j, i) >= 0)
+                Console.Write($"{j} {op} {i} = {result(op, j, i).ToString("N2")}    | ");
+            
+            else
+                Console.Write($"{j} {op} {i} = {result(op, j, i).ToString("N2")}   | ");
+        }
+
+        Console.WriteLine("");
+    }
+}
+
+operation(operador);
