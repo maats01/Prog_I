@@ -1,0 +1,13 @@
+	Classe x Objeto
+Classe: código que define os atributos e métodos.
+	atributos: características da classe;
+	método (funções/procedimentos): sempre relacionado aos verbos/ações.
+
+*funções retornam valores, procedimentos não.
+
+Objeto: instância de uma classe, armazenada na memória do computador;
+	variável que possibilita o acesso aos atributos e aos métodos da classe;
+	ao encerrar o programa, o objeto é eliminado da memória, mas a classe se mantém.
+
+	*Os objetos são instâncias com os mesmos formatos, definidos pela classe, porém podem
+	armazenar diferentes valores.
