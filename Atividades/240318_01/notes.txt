@@ -1,13 +1,33 @@
 	Classe x Objeto
-Classe: código que define os atributos e métodos.
-	atributos: características da classe;
-	método (funções/procedimentos): sempre relacionado aos verbos/ações.
+Classe: 
+código que define os atributos e métodos.
+atributos: características da classe;
+método (funções/procedimentos): sempre relacionado aos verbos/ações.
 
 *funções retornam valores, procedimentos não.
 
-Objeto: instância de uma classe, armazenada na memória do computador;
-	variável que possibilita o acesso aos atributos e aos métodos da classe;
-	ao encerrar o programa, o objeto é eliminado da memória, mas a classe se mantém.
+Objeto: 
+instância de uma classe, armazenada na memória do computador;
+variável que possibilita o acesso aos atributos e aos métodos da classe;
+ao encerrar o programa, o objeto é eliminado da memória, mas a classe se mantém.
 
-	*Os objetos são instâncias com os mesmos formatos, definidos pela classe, porém podem
-	armazenar diferentes valores.
+*Os objetos são instâncias com os mesmos formatos, definidos pela classe, porém podem
+armazenar diferentes valores.
+
+	Business Objects
+BO são classes projetadas para solucionar problemas de um determinado domínio de aplicação
+de software. Ex.: classe Consumidor num sistema comercial.
+
+* Entidade
+- Qualquer coisa importante do domínio da aplicação ou do mundo real
+que precise ser representada como uma classe.
+
+	POO
+Uma abordagem para construir aplicações que são:
+-flexíveis;
+-naturais;
+-bem elaboradas;
+-testáveis;
+
+* focada em objetos que interagem entre si.
+
