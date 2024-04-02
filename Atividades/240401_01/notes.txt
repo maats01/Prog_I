@@ -1,0 +1,28 @@
+TERMOS:
+
+Assinatura do método: composto *apenas* pelo nome e conjunto de parâmetros e seus tipos.
+
+	*Não pode haver métodos de assinatura igual (mesmo nome e parâmetro), porém
+	pode haver métodos de mesmo nome e parâmetros diferentes.
+
+Sobrecarga/overloading: usado para descrever métodos que possuem o mesmo nome
+com diferentes parâmetros.
+
+	*Métodos que são especificados com o mesmo nome, devem prover variações da mesma funcionalidade.
+
+Contract: as especificações dos modificadores de acesso definem o contrato da classe. Quais atributos
+e métodos estarão visíveis, para quem e em que nível de acesso.
+
+Construtores: tipo especial de método com o mesmo nome da classe, geralmente definidos no primeiro parágrafo
+da classe.
+
+	*É o método utilizado na criação das instâncias da classe;
+	*Um método construtor sem parâmetros é definido como construtor padrão (default constructor);
+	*Pode ser feito overloading de construtores.
+
+* Construtor por instânciação e atribuição C#:
+Customer c3 = new Customer{
+    CustomerId = 3,
+    Name = "Junior",
+    EmailAddress = "junior@dotmail.com"
+};
