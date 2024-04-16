@@ -1,0 +1,20 @@
+*Pesquisar sobre Design Pattern Solid
+*ORM - Object Relational Mapping: Framework
+	- Entity Framework (popular para desenvolver com C#)
+
+BORDÕES:
+YAGNI - You Aren't Gonna Need It
+Não adicione código em suas classes até que eles sejam realmente necessários.
+
+KISS  - Keep It Simple Stupid
+Mantenha as coisas simples. Se está complicado, provavelmente está errado.
+
+DRY   - Dont Repeat Yourself
+Escreva classes e métodos de modo que eles possam ser reaproveitados.
+
+
+Classes que possuem apenas atributos, sem comportamentos: POCO (C#)
+Plain
+Old
+C#
+Object

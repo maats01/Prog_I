@@ -7,8 +7,7 @@ namespace _240401_01.Models
         public int CustomerId { get; set; }
         public string Name { get; set; }
         public string EmailAddress { get; set; }
-        public string HomeAddress { get; set; }
-        public string WorkAddress { get; set; }
+        public List<Address> Addresses { get; set; }
 
         public Customer()
         {
@@ -27,19 +26,9 @@ namespace _240401_01.Models
             return isValid;
         }
 
-        public Customer Retrieve(int customerId)
-        {
-            return new Customer();
-        }
-
         public List<Customer> Retrieve()
         {
             return new List<Customer>();
-        }
-
-        public void Save(Customer customer)
-        {
-
         }
     }
 }
