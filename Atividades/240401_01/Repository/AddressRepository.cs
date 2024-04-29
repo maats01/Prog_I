@@ -1,23 +1,12 @@
 using System;
-using _240401_01.Models;
-using _240401_01.Data;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
 
 namespace _240401_01.Repository
 {
     public class AddressRepository
     {
-        public void Save(Address address)
-        {
-            DataSet.Addresses.Add(address);
-        }
-
-        public Address? Retrieve(int id)
-        {
-            foreach (var a in DataSet.Addresses)
-                if (a.Id == id)
-                    return a;
-            
-            return null;
-        }
+        
     }
 }

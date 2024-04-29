@@ -1,4 +1,3 @@
-using System;
 
 namespace _240401_01.Models
 {
@@ -21,14 +20,22 @@ namespace _240401_01.Models
 
         public bool Validate()
         {
-            var isValid = true;
-            if (string.IsNullOrWhiteSpace(Name)) isValid = false;
-            return isValid;
+            return true;
+        }
+
+        public Customer Retrieve(int customerId)
+        {
+            return new Customer();
         }
 
         public List<Customer> Retrieve()
         {
-            return new List<Customer>();
+            return new List<Customer>();            
+        }
+
+        public void Save(Customer customer)
+        {
+
         }
     }
 }
