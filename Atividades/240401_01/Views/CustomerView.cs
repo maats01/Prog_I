@@ -10,9 +10,10 @@ namespace _240401_01.Views
     public class CustomerView
     {
         private CustomerController customerController;
-
+        private AddressView addressView;
         public CustomerView()
         {
+            addressView = new AddressView();
             customerController = new CustomerController();
             this.Init();
         }
@@ -85,7 +86,7 @@ namespace _240401_01.Views
                     aux = Convert.ToInt32(Console.ReadLine());
                     if (aux == 1)
                     {
-                        
+                        customer.Addresses.Add(addressView.Insert());
                     }
                     else if (aux == 0)
                     {
