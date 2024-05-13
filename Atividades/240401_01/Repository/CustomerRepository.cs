@@ -9,12 +9,13 @@ namespace _240401_01.Repository
 {
     public class CustomerRepository
     {                
-        public void Save(Customer customer)
+        public void Create(Customer customer)
         {
+            customer.CustomerId = GetNextId();
             DataSet.Customers.Add(customer);
         }
-
-        public Customer Retrieve(int id)
+        
+        public Customer Read(int id)
         {            
             foreach(var c in DataSet.Customers)
             {
@@ -25,9 +26,21 @@ namespace _240401_01.Repository
             return null;
         }
 
-        public List<Customer> Retrieve()
+        public List<Customer> Read()
         {
             return DataSet.Customers;
+        }
+
+        private int GetNextId()
+        {
+            int n = 0;
+            foreach (var a in DataSet.Customers)
+            {
+                if (a.CustomerId > n)
+                    n = a.CustomerId;
+            }
+
+            return n++;
         }
     }
 }

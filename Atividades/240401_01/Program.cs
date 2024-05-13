@@ -4,7 +4,7 @@ using _240401_01.Views;
 bool aux = true;
 do{
     Console.WriteLine("**********************");
-    Console.WriteLine("MEU POGRAMA DE PIDIDUX");
+    Console.WriteLine("MEU PROGRAMA DE PIDIDUX");
     Console.WriteLine("**********************");
     Console.WriteLine();
 
