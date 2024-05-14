@@ -41,9 +41,11 @@ namespace _240401_01.Views
                 case 1:
                     address.Type = AddressType.Residential;
                 break;
+
                 case 2:
                     address.Type = AddressType.Commercial;
                 break;
+                
                 default:
                     address.Type = AddressType.Other;
                 break;

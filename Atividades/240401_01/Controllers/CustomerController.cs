@@ -18,17 +18,22 @@ namespace _240401_01.Controllers
 
         public void Insert(Customer customer)
         {
-            customerRepository.Create(customer);
+            customerRepository.Insert(customer);
         }
 
         public Customer Get(int id)
         {
-            return customerRepository.Read(id);
+            return customerRepository.Retrieve(id);
         }
 
         public List<Customer> Get()
         {
-            return customerRepository.Read();
+            return customerRepository.Retrieve();
+        }
+
+        public List<Customer> GetByName(string name)
+        {
+            return customerRepository.RetrieveByName(name);
         }
     }
 }

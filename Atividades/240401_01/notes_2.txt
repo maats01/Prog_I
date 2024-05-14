@@ -12,7 +12,6 @@ Mantenha as coisas simples. Se está complicado, provavelmente está errado.
 DRY   - Dont Repeat Yourself
 Escreva classes e métodos de modo que eles possam ser reaproveitados.
 
-
 Classes que possuem apenas atributos, sem comportamentos: POCO (C#)
 Plain
 Old
