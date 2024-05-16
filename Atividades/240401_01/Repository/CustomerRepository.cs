@@ -15,6 +15,11 @@ namespace _240401_01.Repository
             DataSet.Customers.Add(customer);
         }
         
+        public void Delete(int id)
+        {
+            DataSet.Customers.Remove(Retrieve(id));
+        }
+
         public Customer Retrieve(int id)
         {            
             foreach(var c in DataSet.Customers)

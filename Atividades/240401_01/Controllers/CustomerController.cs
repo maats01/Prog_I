@@ -21,6 +21,10 @@ namespace _240401_01.Controllers
             customerRepository.Insert(customer);
         }
 
+        public void Delete(int id)
+        {
+            customerRepository.Delete(id);
+        }
         public Customer Get(int id)
         {
             return customerRepository.Retrieve(id);
