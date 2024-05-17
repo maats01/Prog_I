@@ -20,13 +20,12 @@ namespace _240401_01.Views
     
         public void Init()
         {
+            Console.WriteLine("*************");
             Console.WriteLine("MENU CUSTOMER");
             Console.WriteLine("*************");
-            Console.WriteLine("");
 
             bool aux = true;
             do{
-                Console.WriteLine("***************************");
                 Console.WriteLine("Escolha uma opção:");
                 Console.WriteLine("1 - Inserir Consumidor");
                 Console.WriteLine("2 - Pesquisar Consumidor");
@@ -174,8 +173,9 @@ namespace _240401_01.Views
             while(aux != 0)
             {
                 Console.WriteLine("*******************");
-                Console.WriteLine("1 - Deletar por ID");
-                Console.WriteLine("2 - Atualizar dados");
+                Console.WriteLine("1 - Deletar por Id");
+                Console.WriteLine("2 - Deletar endereço por Id");
+                Console.WriteLine("3 - Atualizar dados");
                 Console.WriteLine("0 - Sair");
                 aux = Convert.ToInt16((Console.ReadLine()));
                 switch(aux)
@@ -185,6 +185,10 @@ namespace _240401_01.Views
                     break;
 
                     case 2:
+                        DeleteCustomerAddressById();
+                    break;
+
+                    case 3:     
                     break;
 
                     case 0:
@@ -201,9 +205,9 @@ namespace _240401_01.Views
         private void DeleteCustomerById()
         {
             Console.WriteLine("***************************");
-            Console.WriteLine("Deletando consumidor por ID");
+            Console.WriteLine("Deletando consumidor por Id");
             Console.WriteLine("***************************");
-            Console.WriteLine("Insira o ID do consumidor: ");
+            Console.WriteLine("Insira o Id do consumidor: ");
 
             CustomerController c = new CustomerController();
             int customerId = Convert.ToInt32(Console.ReadLine());
@@ -248,6 +252,22 @@ namespace _240401_01.Views
             else
             {
                 Console.WriteLine($"Consumidor de Id {customerId} não encontrado.");
+            }
+        }
+
+        private void DeleteCustomerAddressById()
+        {
+            Console.WriteLine("***************************");
+            Console.WriteLine("Deletando endereço por Id");
+            Console.WriteLine("***************************");
+            Console.WriteLine("Insira o Id do consumidor: ");
+
+            CustomerController c = new CustomerController();
+            int customerId = Convert.ToInt32(Console.ReadLine());
+            Customer customer = c.Get(customerId);
+            if ( customer != null )
+            {
+                // check if customer has addresses
             }
         }
 
