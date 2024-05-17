@@ -9,10 +9,16 @@ namespace _240401_01.Repository
 {
     public class AddressRepository
     {
-        public void Create(Address address)
+        public void Insert(Address address)
         {
             address.Id = GetNextId();
             DataSet.Addresses.Add(address);
+        }
+
+        public void Delete(Customer customer, Address address)
+        {
+            DataSet.Addresses.Remove(address);
+            customer.Addresses.Remove(address);
         }
 
         public Address Read(int id)
@@ -40,7 +46,7 @@ namespace _240401_01.Repository
                     n = a.Id;
             }
 
-            return n++;
+            return ++n;
         }
     }
 }

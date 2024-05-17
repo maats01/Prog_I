@@ -24,5 +24,10 @@ namespace _240401_01.Models
         public string Country { get; set; }
         public bool IsDefault { get; set; }
         public Customer Customer {get; set;}
+
+        public override string ToString()
+        {
+            return $"{Id} - {Street}, {District} - {City}, {FederalState}";
+        }
     }
 }

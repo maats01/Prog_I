@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using _240401_01.Models;
 using _240401_01.Controllers;
+using System.Runtime.InteropServices;
 
 namespace _240401_01.Views
 {
@@ -223,7 +224,7 @@ namespace _240401_01.Views
                     Console.WriteLine("1 - Sim");
                     Console.WriteLine("0 - Voltar");
 
-                    aux = Convert.ToInt16((Console.ReadLine()));
+                    aux = Convert.ToInt16(Console.ReadLine());
                     switch (aux)
                     {
                         case 1:
@@ -233,7 +234,7 @@ namespace _240401_01.Views
                             }
                             catch
                             {
-                                Console.WriteLine("Alguma coisa inesperada aconteceu.");
+                                Console.WriteLine("Algo inesperado aconteceu.");
                                 break;
                             }
                             Console.WriteLine("Consumidor deletado com sucesso.");
@@ -263,11 +264,54 @@ namespace _240401_01.Views
             Console.WriteLine("Insira o Id do consumidor: ");
 
             CustomerController c = new CustomerController();
+            AddressController a = new AddressController();
+            
             int customerId = Convert.ToInt32(Console.ReadLine());
             Customer customer = c.Get(customerId);
-            if ( customer != null )
+            int addressesCount = customer.Addresses.Count;
+            if ( customer != null && addressesCount > 0 )
             {
-                // check if customer has addresses
+                Console.WriteLine(customer.ToString());
+                ListCustomerAddresses(customer);
+                Console.WriteLine("Digite o Id do endereço que você quer deletar: ");
+                Address address = a.Get(Convert.ToInt16(Console.ReadLine()));
+
+                int aux = -1;
+                while ( aux != 0 )
+                {
+                    Console.WriteLine("Deseja realmente deletar esse endereço?");
+                    Console.WriteLine("1 - Sim");
+                    Console.WriteLine("0 - Voltar");
+
+                    aux = Convert.ToInt16(Console.ReadLine());
+                    switch (aux)
+                    {
+                        case 1:
+                            try
+                            {
+                                a.Delete(customer, address);
+                            }
+                            catch
+                            {
+                                Console.WriteLine("Algo inesperado aconteceu.");
+                                break;
+                            }
+                            Console.WriteLine("Endereço deletado com sucesso.");
+                            aux = 0;
+                        break;
+
+                        case 0:
+                        break;
+
+                        default:
+                            Console.WriteLine("Opção inválida, tente novamente.");
+                        break;
+                    }
+                }
+            }
+            else
+            {
+                Console.WriteLine($"Consumidor com Id {customerId} inexistente ou sem endereços cadastrados.");
             }
         }
 
@@ -286,6 +330,12 @@ namespace _240401_01.Views
             {
                 Console.WriteLine(customer.ToString());
             }
+        }
+
+        public void ListCustomerAddresses(Customer customer)
+        {
+            foreach (var c in customer.Addresses) // revisar
+                Console.WriteLine(c.ToString());
         }
 
         private void ShowCustomerById(int id)

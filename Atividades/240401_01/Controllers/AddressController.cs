@@ -18,8 +18,13 @@ namespace _240401_01.Controllers
 
         public Address Insert(Address address)
         {
-            this.addressRepository.Create(address);
+            this.addressRepository.Insert(address);
             return address;
+        }
+
+        public void Delete(Customer customer, Address address)
+        {
+            addressRepository.Delete(customer, address);
         }
 
         public Address Get(int id)
