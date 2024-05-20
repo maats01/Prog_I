@@ -42,7 +42,7 @@ namespace _240401_01.Repository
             int n = 0;
             foreach (var a in DataSet.Addresses)
             {
-                if (a.Id > n)
+                if ( a.Id > n )
                     n = a.Id;
             }
 

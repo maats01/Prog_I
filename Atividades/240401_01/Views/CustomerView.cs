@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using _240401_01.Models;
 using _240401_01.Controllers;
 using System.Runtime.InteropServices;
+using System.Security.Cryptography.X509Certificates;
 
 namespace _240401_01.Views
 {
@@ -271,10 +272,21 @@ namespace _240401_01.Views
             int addressesCount = customer.Addresses.Count;
             if ( customer != null && addressesCount > 0 )
             {
+                Console.WriteLine("Consumidor:");
                 Console.WriteLine(customer.ToString());
+                Console.WriteLine("Endereço(s):");
                 ListCustomerAddresses(customer);
-                Console.WriteLine("Digite o Id do endereço que você quer deletar: ");
-                Address address = a.Get(Convert.ToInt16(Console.ReadLine()));
+
+                int adId = -1;
+                Address? address = null;
+                while ( a.Get(adId) == null )
+                {
+                    Console.WriteLine("Digite o Id do endereço que você quer deletar: ");
+                    adId = Convert.ToInt16(Console.ReadLine());
+                    address = a.Get(adId);
+                    if ( address == null )
+                        Console.WriteLine($"Endereço de Id {adId} não foi encontrado.");
+                }
 
                 int aux = -1;
                 while ( aux != 0 )
