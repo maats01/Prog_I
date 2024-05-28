@@ -42,6 +42,7 @@ namespace _240401_01.Repository
 
             return retorno;
         }
+
         private int GetNextId()
         {
             int n = 0;
